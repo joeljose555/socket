@@ -1,0 +1,9 @@
+step 1 - npm i 
+step 2 - npm start
+
+routes ----------------------------
+1)add student data route - http://localhost:3000/add-data
+  params - name,rollno,mark1,mark2
+2)get student data - http://localhost:3000/get-data
+  params - rollno
+3)chat -http://localhost:3000/chat

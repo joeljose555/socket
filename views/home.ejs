@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.socket.io/3.0.5/socket.io.min.js"></script>
+    <title>Chat</title>
+</head>
+<body>
+    <input type="text" name="" id="message">
+    <button onclick="sendMessage()">Send Message</button>
+    <h4></h4>
+    <script>
+        const socket = io('http://localhost:3000')
+        let data  = document.querySelector('#message')
+
+        socket.on('message',(data)=>{
+            document.querySelector('h4').innerHTML = data
+        })
+        const sendMessage = () =>{
+            socket.emit('message',data.value)
+        }
+    </script>
+</body>
+</html>
